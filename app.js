@@ -32,25 +32,33 @@ function addOrSubtract(element){
     const elementSym = element.getAttribute('data-symbol')
     const output = parent.querySelector(".main__product-num")
     const sum = parent.querySelector(".main__product-price-span")
-    console.log(sum );
+    const kkal = parent.querySelector(".main__product-kcall-span")
+
+    console.log(kkal );
     if(elementSym == '+'){    
         products[parentId].amount++
         if (parentId == "plainBurger"){
             sum.innerHTML = parseInt(sum.innerHTML) + 10000
+            kkal.innerHTML = parseInt(kkal.innerHTML) + 370
         }else if(parentId == "freshBurger"){
             sum.innerHTML = parseInt(sum.innerHTML) + 20500
+            kkal.innerHTML = parseInt(kkal.innerHTML) + 430
         }else if(parentId == "freshCombo"){
             sum.innerHTML = parseInt(sum.innerHTML) + 31900
+            kkal.innerHTML = parseInt(kkal.innerHTML) + 550
         }
     }
     else if(elementSym == '-' && products[parentId].amount > 0){
         products[parentId].amount--
         if (parentId == "plainBurger"){
             sum.innerHTML = parseInt(sum.innerHTML) - 10000
+            kkal.innerHTML = parseInt(kkal.innerHTML) - 370
         }else if(parentId == "freshBurger"){
             sum.innerHTML = parseInt(sum.innerHTML) - 20500
+            kkal.innerHTML = parseInt(kkal.innerHTML) - 430
         }else if(parentId == "freshCombo"){
             sum.innerHTML = parseInt(sum.innerHTML) - 31900
+            kkal.innerHTML = parseInt(kkal.innerHTML) - 550
         }
     }
 
